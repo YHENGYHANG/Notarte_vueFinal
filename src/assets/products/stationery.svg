@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Notebook and pencil">
+  <rect width="400" height="300" fill="#fbf0cf"/>
+  <circle cx="340" cy="250" r="90" fill="#f7e5ae"/>
+  <rect x="100" y="48" width="150" height="206" rx="10" fill="#2f5d8a"/>
+  <rect x="112" y="48" width="138" height="206" rx="8" fill="#3b73a8"/>
+  <rect x="136" y="84" width="86" height="12" rx="3" fill="#f2b01e"/>
+  <rect x="136" y="106" width="60" height="8" rx="3" fill="#cfe0f1"/>
+  <g fill="#cfe0f1"><circle cx="124" cy="80" r="3"/><circle cx="124" cy="110" r="3"/><circle cx="124" cy="140" r="3"/><circle cx="124" cy="170" r="3"/><circle cx="124" cy="200" r="3"/><circle cx="124" cy="230" r="3"/></g>
+  <g transform="rotate(32 290 160)">
+    <rect x="272" y="50" width="36" height="170" rx="4" fill="#f2b01e"/>
+    <rect x="272" y="50" width="12" height="170" fill="#d99a10"/>
+    <rect x="272" y="36" width="36" height="20" rx="4" fill="#e8869a"/>
+    <path d="M272 220 H308 L290 262Z" fill="#f1d6a8"/>
+    <path d="M282 244 H298 L290 262Z" fill="#1f2d3b"/>
+  </g>
+</svg>

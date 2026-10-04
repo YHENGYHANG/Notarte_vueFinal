@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="T-shirt">
+  <rect width="400" height="300" fill="#f6dfe5"/>
+  <circle cx="60" cy="250" r="90" fill="#f0cdd6"/>
+  <circle cx="350" cy="50" r="70" fill="#f3d6dd"/>
+  <path d="M140 52 L96 78 L56 126 L100 156 L124 128 V250 H276 V128 L300 156 L344 126 L304 78 L260 52 Q238 84 200 84 Q162 84 140 52Z" fill="#c2415f"/>
+  <path d="M140 52 Q162 84 200 84 Q238 84 260 52 Q240 66 200 66 Q160 66 140 52Z" fill="#8f2b44"/>
+  <rect x="124" y="226" width="152" height="8" fill="#a8334e"/>
+  <circle cx="200" cy="168" r="22" fill="#f2b01e"/>
+  <ellipse cx="200" cy="268" rx="100" ry="8" fill="#5a1b2c" opacity=".12"/>
+</svg>

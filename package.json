@@ -1,0 +1,23 @@
+{
+  "name": "inventory-management-system",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Inventory Management System built with Vue 3, Vue Router and localStorage",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@fontsource-variable/bricolage-grotesque": "^5.1.0",
+    "@fontsource/ibm-plex-sans": "^5.1.0",
+    "vue": "^3.5.0",
+    "vue-router": "^4.4.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.0",
+    "vite": "^5.4.0"
+  }
+}

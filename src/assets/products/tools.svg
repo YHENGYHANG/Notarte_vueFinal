@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Hammer and wrench">
+  <rect width="400" height="300" fill="#e3e7ec"/>
+  <circle cx="60" cy="60" r="85" fill="#d5dbe2"/>
+  <circle cx="350" cy="260" r="80" fill="#d5dbe2"/>
+  <g transform="rotate(-38 200 150)">
+    <rect x="188" y="70" width="24" height="190" rx="8" fill="#b9793d"/>
+    <rect x="188" y="70" width="9" height="190" rx="4" fill="#9a602b"/>
+    <rect x="140" y="40" width="112" height="44" rx="8" fill="#47586a"/>
+    <rect x="140" y="40" width="34" height="44" rx="8" fill="#2f3d4b"/>
+    <rect x="226" y="48" width="26" height="28" fill="#5d7084"/>
+  </g>
+  <g transform="rotate(38 200 150)">
+    <rect x="188" y="100" width="24" height="170" rx="10" fill="#f2b01e"/>
+    <path d="M168 100 V52 Q168 34 186 34 H196 V60 H204 V34 H214 Q232 34 232 52 V100Z" fill="#8795a4"/>
+  </g>
+</svg>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Office chair">
+  <rect width="400" height="300" fill="#e0ede6"/>
+  <circle cx="70" cy="60" r="80" fill="#d0e4d9"/>
+  <rect x="0" y="236" width="400" height="64" fill="#cfe0d5"/>
+  <rect x="148" y="40" width="104" height="104" rx="16" fill="#1f6b58"/>
+  <rect x="160" y="52" width="80" height="80" rx="10" fill="#2a8670"/>
+  <rect x="128" y="146" width="144" height="28" rx="10" fill="#2a8670"/>
+  <rect x="192" y="174" width="16" height="48" fill="#3a4a58"/>
+  <path d="M120 238 L200 218 L280 238" stroke="#3a4a58" stroke-width="12" stroke-linecap="round" fill="none"/>
+  <circle cx="120" cy="242" r="10" fill="#1f2d3b"/>
+  <circle cx="200" cy="246" r="10" fill="#1f2d3b"/>
+  <circle cx="280" cy="242" r="10" fill="#1f2d3b"/>
+  <rect x="116" y="112" width="14" height="46" rx="7" fill="#3a4a58"/>
+  <rect x="270" y="112" width="14" height="46" rx="7" fill="#3a4a58"/>
+</svg>

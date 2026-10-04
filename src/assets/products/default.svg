@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Cardboard box">
+  <rect width="400" height="300" fill="#e7ecef"/>
+  <circle cx="320" cy="70" r="90" fill="#dbe2e7"/>
+  <path d="M110 120 L200 80 L290 120 L200 160Z" fill="#d9a15f"/>
+  <path d="M110 120 V212 L200 252 V160Z" fill="#b97f3f"/>
+  <path d="M290 120 V212 L200 252 V160Z" fill="#c9904d"/>
+  <path d="M170 142 L260 102 L290 120 L200 160Z" fill="#e8bd86"/>
+  <path d="M200 160 V252" stroke="#9c6a30" stroke-width="3"/>
+  <rect x="226" y="176" width="42" height="26" rx="3" fill="#fff" opacity=".85" transform="skewY(-24) translate(0 100)"/>
+  <ellipse cx="200" cy="270" rx="110" ry="8" fill="#1f2d3b" opacity=".12"/>
+</svg>
