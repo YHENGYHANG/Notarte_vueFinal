@@ -1,5 +1,5 @@
 <script setup>
-import { useRouter, useRoute } from 'vue-router'
+import { useRouter } from 'vue-router'
 import ItemCard from '../components/inventory/ItemCard.vue'
 import ItemTable from '../components/inventory/ItemTable.vue'
 import ItemFilters from '../components/inventory/ItemFilters.vue'
@@ -17,30 +17,16 @@ import { iconUrl } from '../utils/images'
  * Children (ItemFilters, ItemCard, ItemTable) report back with events.
  */
 const router = useRouter()
-const route = useRoute()
 const { can } = useAuth()
 const toast = useToast()
 const confirm = useConfirm()
 const { items, categories, categoryMap, adjustStock, deleteItem } = useInventory()
 const { search, category, status, sort, viewMode, filtered, hasFilters, clearFilters } = useInventoryFilters(items)
 
-if (['low', 'out', 'ok'].includes(route.query.status)) status.value = route.query.status
-
 const openItem = (id) => router.push({ name: 'item-detail', params: { id } })
 const editItem = (id) => router.push({ name: 'item-edit', params: { id } })
 
-async function onAdjust({ id, delta }) {
-  if (Math.abs(delta) >= 10) {
-    const item = items.value.find((entry) => entry.id === id)
-    if (!item) return
-    const confirmed = await confirm.ask({
-      title: `${delta > 0 ? 'Add' : 'Remove'} ${Math.abs(delta)} units?`,
-      message: `${item.name} will change from ${item.quantity} to ${Math.max(0, item.quantity + delta)} units.`,
-      confirmLabel: delta > 0 ? 'Add stock' : 'Remove stock',
-      danger: delta < 0,
-    })
-    if (!confirmed) return
-  }
+function onAdjust({ id, delta }) {
   const result = adjustStock(id, delta)
   if (!result.ok) toast.error(result.error)
 }

@@ -49,6 +49,21 @@ const rules = {
 
 const form = useForm(fromItem(props.initial), rules)
 const { values } = form
+// Keep a draft for new items so refreshes or accidental navigation do not wipe typed fields.
+const draftKey = 'ims:item-create-draft:v1'
+if (!props.initial) {
+  try {
+    const savedDraft = localStorage.getItem(draftKey)
+    if (savedDraft) form.reset({ ...blank(), ...JSON.parse(savedDraft) })
+  } catch { /* Ignore invalid or unavailable browser storage. */ }
+}
+watch(values, (draft) => {
+  if (props.initial) return
+  try { localStorage.setItem(draftKey, JSON.stringify(draft)) } catch { /* Storage may be full or disabled. */ }
+}, { deep: true })
+function clearDraft() {
+  try { localStorage.removeItem(draftKey) } catch { /* Storage may be disabled. */ }
+}
 
 // Start over when the parent hands us a different item (for example, route param change).
 watch(() => props.initial, (item) => form.reset(fromItem(item)))
@@ -116,12 +131,13 @@ async function submit(another = false) {
 }
 
 function reset() {
+  clearDraft()
   form.reset(fromItem(null))
   imageError.value = ''
   focusFirst()
 }
 
-defineExpose({ reset, focusFirst })
+defineExpose({ reset, focusFirst, clearDraft })
 
 const invalid = (name) => !!form.errorFor(name)
 </script>

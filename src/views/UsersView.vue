@@ -33,16 +33,7 @@ function openEdit(user) {
   modalOpen.value = true
 }
 
-async function onSave(data) {
-  const confirmed = await confirm.ask({
-    title: editing.value ? `Update ${data.name}?` : `Add ${data.name}?`,
-    message: editing.value
-      ? 'The user account and role will be updated.'
-      : 'This user will be able to sign in according to the selected role.',
-    confirmLabel: editing.value ? 'Update user' : 'Add user',
-  })
-  if (!confirmed) return
-
+function onSave(data) {
   const result = editing.value ? updateUser(editing.value.id, data) : createUser(data)
   if (!result.ok) {
     toast.error(result.error)

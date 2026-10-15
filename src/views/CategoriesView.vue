@@ -66,16 +66,7 @@ export default {
       this.editing = category
       this.modalOpen = true
     },
-    async onSave(data) {
-      const confirmed = await this.askConfirm({
-        title: this.editing ? `Update ${data.name}?` : `Add ${data.name}?`,
-        message: this.editing
-          ? 'The category details will be updated for the inventory.'
-          : 'This category will be added and can be used for new inventory items.',
-        confirmLabel: this.editing ? 'Update category' : 'Add category',
-      })
-      if (!confirmed) return
-
+    onSave(data) {
       const result = this.editing ? this.updateCategory(this.editing.id, data) : this.createCategory(data)
       if (!result.ok) {
         this.toast.error(result.error)

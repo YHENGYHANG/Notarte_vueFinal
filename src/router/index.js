@@ -70,15 +70,10 @@ const routes = [
     meta: { title: 'Users', requiresAuth: true, permission: 'users:manage' },
   },
   {
-    path: '/insights',
-    name: 'insights',
-    component: () => import('../views/OperationsView.vue'),
-    meta: { title: 'Insights', requiresAuth: true, permission: 'guide:view' },
-  },
-  {
     path: '/guide',
-    redirect: { name: 'insights' },
-    meta: { requiresAuth: true, permission: 'guide:view' },
+    name: 'guide',
+    component: () => import('../views/GuideView.vue'),
+    meta: { title: 'Project guide', requiresAuth: true, permission: 'guide:view' },
   },
   {
     path: '/forbidden',

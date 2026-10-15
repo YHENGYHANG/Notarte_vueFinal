@@ -3,10 +3,8 @@ import { computed, ref } from 'vue'
 import { useRouter, onBeforeRouteLeave } from 'vue-router'
 import ItemForm from '../components/inventory/ItemForm.vue'
 import BaseIcon from '../components/common/BaseIcon.vue'
-import ConfirmDialog from '../components/common/ConfirmDialog.vue'
 import { useInventory } from '../composables/useInventory'
 import { useToast } from '../composables/useToast'
-import { useConfirm } from '../composables/useConfirm'
 
 // One page for two routes. The router passes `mode` (and `id` when editing) as props.
 const props = defineProps({
@@ -16,7 +14,6 @@ const props = defineProps({
 
 const router = useRouter()
 const toast = useToast()
-const confirm = useConfirm()
 const { items, categories, getItem, createItem, updateItem } = useInventory()
 
 const isEdit = computed(() => props.mode === 'edit')
@@ -28,16 +25,7 @@ const formRef = ref(null) // template ref to the child, used to call its exposed
 const dirty = ref(false) // kept in sync by the child's `dirty` event
 const saving = ref(false)
 
-async function onSave(payload, { another }) {
-  const confirmed = await confirm.ask({
-    title: isEdit.value ? `Update ${payload.name}?` : `Add ${payload.name}?`,
-    message: isEdit.value
-      ? 'Review the changes before confirming. The item details and stock settings will be updated.'
-      : 'This item will be added to your inventory and become visible to other authorized users.',
-    confirmLabel: isEdit.value ? 'Update item' : 'Add item',
-  })
-  if (!confirmed) return
-
+function onSave(payload, { another }) {
   saving.value = true
   const result = isEdit.value ? updateItem(props.id, payload) : createItem(payload)
   saving.value = false
@@ -47,6 +35,7 @@ async function onSave(payload, { another }) {
     return
   }
   dirty.value = false // so the leave-guard below lets us go
+  formRef.value?.clearDraft?.()
   toast.success(isEdit.value ? `Saved ${payload.name}` : `Added ${payload.name}`)
 
   if (another) {
@@ -94,6 +83,4 @@ onBeforeRouteLeave(() => {
       @dirty="dirty = $event"
     />
   </div>
-
-  <ConfirmDialog v-bind="confirm.state" @confirm="confirm.accept" @cancel="confirm.cancel" />
 </template>

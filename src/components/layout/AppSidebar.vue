@@ -16,7 +16,7 @@ const nav = [
   { path: '/inventory', label: 'Inventory', icon: 'package', perm: 'items:view' },
   { path: '/categories', label: 'Categories', icon: 'tag', perm: 'categories:manage', admin: true },
   { path: '/users', label: 'Users', icon: 'users', perm: 'users:manage', admin: true },
-  { path: '/insights', label: 'Insights', icon: 'dashboard', perm: 'guide:view' },
+  { path: '/guide', label: 'Project guide', icon: 'book', perm: 'guide:view' },
 ]
 
 // Links the current role cannot open are never rendered.
